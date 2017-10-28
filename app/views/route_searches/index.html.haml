@@ -1,0 +1,23 @@
+%h1 Listing route_searches
+
+%table
+  %thead
+    %tr
+      %th Source
+      %th Destination
+      %th
+      %th
+      %th
+
+  %tbody
+    - @route_searches.each do |route_search|
+      %tr
+        %td= route_search.Source
+        %td= route_search.Destination
+        %td= link_to 'Show', route_search
+        %td= link_to 'Edit', edit_route_search_path(route_search)
+        %td= link_to 'Destroy', route_search, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Route search', new_route_search_path

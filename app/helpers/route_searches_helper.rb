@@ -1,0 +1,2 @@
+module RouteSearchesHelper
+end

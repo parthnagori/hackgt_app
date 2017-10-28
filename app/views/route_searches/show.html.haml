@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Source:
+  = @route_search.Source
+%p
+  %b Destination:
+  = @route_search.Destination
+
+= link_to 'Edit', edit_route_search_path(@route_search)
+\|
+= link_to 'Back', route_searches_path

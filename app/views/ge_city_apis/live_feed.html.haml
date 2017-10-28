@@ -1,0 +1,9 @@
+- file = @feed_file
+/ - file_path = "/Users/parthnagori/RailsWorkspace/hackgt_app/tmp/media_file1.mp4"
+/ %iframe{:height => "500", :src => file_path, :width => "420"}
+
+%video{:controls => "", :height => "500", :width => "640"}
+  %source{:src => "http://localhost:3000/abc.mp4", :type => "video/mp4"}
+%p
+  %strong Note:
+  This particular location was seen to have some unusual activity.

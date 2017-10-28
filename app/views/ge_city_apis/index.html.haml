@@ -1,0 +1,35 @@
+%h1 Listing GE Pedestrian Data
+
+
+%table.table.table-hover.table-condensed
+  %thead
+    %tr
+      %th
+        %div.inline-block-align  Asset ID
+      %th
+        %div.inline-block-align  Hist Pedestrian Count
+      %th
+        %div.inline-block-align  Hist Direction 
+      %th
+        %div.inline-block-align  Hist Speed
+      %th
+        %div.inline-block-align  Current Pedestrian Count
+      %th
+        %div.inline-block-align  Current Direction
+      %th
+        %div.inline-block-align  Current Speed
+      %th
+        %div.inline-block-align  Anomalous Feed 
+  %tbody
+    - @ge_asset_list.each do |asset|
+      %tr
+        %td= asset
+        %td= @historical_data[asset]["pedestrianCount"]
+        %td= @historical_data[asset]["direction"]
+        %td= @historical_data[asset]["speed"]
+        %td= @current_data[asset]["pedestrianCount"]
+        %td= @current_data[asset]["direction"]
+        %td= @current_data[asset]["speed"]
+        - if @anomaly[:"#{asset}"].present?
+          %td= link_to "Watch Feed", live_feed_ge_city_apis_path
+ 

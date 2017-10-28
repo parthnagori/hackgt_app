@@ -1,0 +1,9 @@
+= simple_form_for(@route_search) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :Source
+    = f.input :Destination
+
+  .form-actions
+    = f.button :submit
